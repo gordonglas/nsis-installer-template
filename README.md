@@ -4,7 +4,7 @@ A simple Nullsoft Installer Template you can use as a starting point for your Wi
 
 When I say simple, I mean it makes some assumptions:
 * Currently does checks for Windows 10 and above, and the OS architecture is 64-bit. If these requirements aren't met, it closes after showing the user a message. If you don't want this, you can comment it out in `installer.nsi`.
-* It assumes the app you're installing is 64-bit, and installs files under `"$PROGRAMFILES64\${COMPANY_NAME}\${APP_NAME}"` where COMPANY_NAME and APP_NAME are defined in `build_config.json` and `$PROGRAMFILES64` is the 64-bit Program Files folder. If you need to install under the 32-bit Program Files folder (or both conditionally) you'll need to make changes.
+* It assumes the app you're installing is 64-bit, and installs files under `"$PROGRAMFILES64\${COMPANY_NAME}\${APP_NAME}"` where COMPANY_NAME and APP_NAME are defined in `build_config.json` and `$PROGRAMFILES64` is the 64-bit Program Files folder. If you need to install under the 32-bit Program Files folder (or both conditionally) you'll need to make changes, including the registry entries for `WOW6432Node`.
 * Requires admin permission to install. This seems to be the most common scenaro, but if you need to change it, you can change `RequestExecutionLevel admin`, `SetShellVarContext all` and the install path.
 * Doesn't have code-signing support. If you need it, you'll have to add it yourself to the build script.
 
