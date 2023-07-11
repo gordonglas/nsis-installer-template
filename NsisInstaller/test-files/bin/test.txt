@@ -1,0 +1,1 @@
+I am a test file that is supposed to get installed by the installer.
